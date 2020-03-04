@@ -1,0 +1,33 @@
+
+public class RepairPrice {
+    public int price;
+    public int daysToRepair;
+    private String[] bikeTypes;
+    private int[][] prices;
+    public RepairPrice(String brand, String level){
+        SetUpTables();
+        int index = 0;
+        for(int i = 0; i < bikeTypes.length;i++){
+            if(brand.equals(bikeTypes[i])){
+                index = i;
+            }
+        }
+        int levelInt;
+        if (level.equals("Silver")){
+            levelInt = 0;
+            daysToRepair = 4;
+        } else if (level.equals("Gold")){
+            levelInt = 1;
+            daysToRepair = 7;
+        } else {
+            levelInt = 2;
+            daysToRepair = 10;
+        }
+        price = prices[index][levelInt];
+        
+    }
+    private void SetUpTables(){
+        bikeTypes = new String[]{"Trek","Cannondale","Salsa","Jamis","Specialized","Surly","Giant","Bianchi","Soma","Cervelo"};
+        prices = new int[][]{{40,60,100},{40,60,100},{50,70,115},{60,75,120},{50,70,120},{45,60,105},{40,60,105},{65,85,135},{65,80,135},{60,75,120}};
+    }
+}
