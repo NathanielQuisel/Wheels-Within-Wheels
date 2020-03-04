@@ -1,0 +1,12 @@
+import java.text.SimpleDateFormat;
+
+public class Payment {
+    int customerNum;
+    int amount;
+    SimpleDateFormat paymentDate;
+    public Payment(int customerNum, int amount, SimpleDateFormat paymentDate){
+        this.customerNum = customerNum;
+        this.amount = amount;
+        this.paymentDate = paymentDate;
+    }
+}
