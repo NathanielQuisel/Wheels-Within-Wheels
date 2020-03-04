@@ -1,0 +1,22 @@
+import java.util.Date;
+
+public class StringConverter {
+    public boolean getBool(String lineSeg){
+        if(lineSeg.equals("true")){
+            return true;
+        }
+        return false;
+    }
+    public int getInt(String lineSeg){
+        return Integer.parseInt(lineSeg);
+    }
+    public Date getDate(String lineSeg){
+        int date = Integer.parseInt(lineSeg);
+        int year = date%1000;
+        date = date/1000;
+        int day = date%10;
+        date = date/10;
+        int month = date;
+        return new Date(month,day,year);
+    }
+}
