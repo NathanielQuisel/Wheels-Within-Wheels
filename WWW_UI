@@ -1,0 +1,87 @@
+
+import java.util.Scanner;
+
+public class WWW_UI {
+    private WWWsystem data = new WWWsystem();
+    public void run(){
+        Scanner input = new Scanner(System.in);
+        String line = "";
+        Support support = new Support();
+        StringConverter converter = new StringConverter();
+        while(!line.equals("quit")){
+            line = input.nextLine();
+            String[] command = support.splitStringIntoParts(line);
+            if(command[0].equals("help")){
+                printHelp();
+            }
+            if(command[0].equals("addrp")){
+                
+            }
+            if(command[0].equals("addc")){
+                data.addCustomer(command[1], command[2]);
+            }
+            if(command[0].equals("addo")){
+                data.addOrder(converter.getInt(command[1]), command[1], command[2], command[3]);
+            }
+            if(command[0].equals("addp")){
+                data.addPayment(converter.getInt(command[1]), converter.getDate(command[2]), converter.getInt(command[3]));
+            }
+            if(command[0].equals("comp")){
+                
+            }
+            if(command[0].equals("printrp")){
+                
+            }
+            if(command[0].equals("printcnum")){
+                
+            }
+            if(command[0].equals("printcname")){
+                
+            }
+            if(command[0].equals("printo")){
+                
+            }
+            if(command[0].equals("printp")){
+                
+            }
+            if(command[0].equals("printt")){
+                
+            }
+            if(command[0].equals("printr")){
+                
+            }
+            if(command[0].equals("prints")){
+                
+            }
+            if(command[0].equals("readc")){
+                
+            }
+            if(command[0].equals("savebs")){
+                
+            }
+            if(command[0].equals("restorebs")){
+                
+            }
+        }
+    }
+    private void printHelp(){
+        System.out.println("quit- Quit Bike System");
+        System.out.println("help- Print Help");
+        System.out.println("addrp brand level price days- Add Repair Price");
+        System.out.println("addc firstName lastName- Add Customer");
+        System.out.println("addo customerNumber date brand level comment- Add Order");
+        System.out.println("addp customerNumber date amount- Add Payment");
+        System.out.println("comp orderNumber completionDate- Mark order orderNumber completed");
+        System.out.println("printrp- Print Repair Prices");
+        System.out.println("printcnum- Print Customers by Customer Number");
+        System.out.println("printcname- Print Customers by Customer Name");
+        System.out.println("printo- Print Orders");
+        System.out.println("printp- Print Payments");
+        System.out.println("printt- Print Transactions");
+        System.out.println("printr- Print Receivables");
+        System.out.println("prints- Print Statements");
+        System.out.println("readc fileName- Read Commands From Disk File fileName");
+        System.out.println("savebs fileName- Save Bike Shop as a file of commands in File fileName");
+        System.out.println("restorebs fileName- Restore a previously saved Bike Shop from File fileName");
+    }
+}
