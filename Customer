@@ -1,0 +1,10 @@
+public class Customer {
+    int customerNum;
+    String fstName;
+    String lstName;
+    public Customer(String fstName, String lstName){
+        this.customerNum = customerNum; //change to make random unique num
+        this.fstName = fstName;
+        this.lstName = lstName;
+    }
+}
