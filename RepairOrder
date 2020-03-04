@@ -1,0 +1,24 @@
+import java.util.Date;
+
+public class RepairOrder {
+    int orderNum;
+    int customerNum;
+    Date orderDate;
+    String brand;
+    String level;
+    String comment;
+    RepairPrice data;
+    Date completionDate;
+    public RepairOrder(int customerNumber, String brand, String level, String comment){
+        //orderNum = new number
+        this.customerNum = customerNum;
+        this.orderDate = new Date();
+        this.brand = brand;
+        this.level = level;
+        this.comment = comment;
+        data = new RepairPrice(brand,level);
+    }
+    public void markPayed(){
+        completionDate = new Date();
+    }
+}
