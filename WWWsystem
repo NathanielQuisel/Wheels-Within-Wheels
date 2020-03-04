@@ -1,0 +1,17 @@
+import java.text.SimpleDateFormat;  
+
+public class WWWsystem {
+    Customer[] customers;
+    Payment[] payments;
+    RepairOrder[] orders;
+    public WWWsystem(){}
+    public void addOrder(int customerNumber, String brand, String level, String comment){
+        orders[orders.length] = new RepairOrder(customerNumber,brand,level,comment);
+    }
+    public void addCustomer(String fstName, String lstName){
+        customers[customers.length] = new Customer(fstName, lstName);
+    }
+    public void addPayment(int customerNum, int amount, SimpleDateFormat paymentDate){
+        payments[payments.length] = new Payment(customerNum, amount, paymentDate);
+    }
+}
